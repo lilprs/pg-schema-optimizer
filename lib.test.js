@@ -47,4 +47,15 @@ test('optimize_schema', () => {
     );
   `),
   ).toMatchSnapshot()
+  expect(
+    optimize_schema(`
+    CREATE TABLE "test" (
+      price integer NOT NULL,
+      "productId" integer DEFAULT 0 NOT NULL,
+      last_price_update timestamp with time zone DEFAULT now() NOT NULL,
+      last_quantity_update timestamp with time zone DEFAULT now() NOT NULL
+    )
+    WITH (autovacuum_vacuum_scale_factor='0.0', autovacuum_vacuum_threshold='100', autovacuum_analyze_scale_factor='0.0', autovacuum_analyze_threshold='100');
+  `),
+  ).toMatchSnapshot()
 })

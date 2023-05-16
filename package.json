@@ -1,6 +1,6 @@
 {
   "name": "pg-schema-optimizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reorders columns in an SQL schema dump file so that they take up less space.",
   "type": "module",
   "exports": {

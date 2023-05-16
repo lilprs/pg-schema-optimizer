@@ -102,16 +102,27 @@ function get_data_type_from_line(line) {
 export function optimize_schema(unoptimized) {
   let optimized = ''
   const lines = unoptimized.split('\n')
-
   let inside_table = false
   let columns = []
+  let num_opened_parentheses = 0
+  let num_closed_parentheses = 0
   for (const line of lines) {
     const normalized_line = line.toLowerCase().trim()
+    for (const char of normalized_line) {
+      if (char === '(') {
+        num_opened_parentheses += 1
+      } else if (char === ')') {
+        num_closed_parentheses += 1
+      }
+    }
     if (normalized_line.startsWith('create table')) {
       inside_table = true
       columns = []
       optimized += line + '\n'
-    } else if (inside_table && normalized_line === ');') {
+    } else if (
+      inside_table &&
+      num_opened_parentheses === num_closed_parentheses
+    ) {
       inside_table = false
       columns.sort((a, b) => {
         for (let i = 0; i <= 4; i += 1) {
