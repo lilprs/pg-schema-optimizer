@@ -1,0 +1,5 @@
+**/dist
+**/dist_api
+**/build
+**/.next
+integrator/debug

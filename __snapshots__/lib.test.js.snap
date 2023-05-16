@@ -1,0 +1,48 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`optimize_schema 1`] = `
+"
+  CREATE TABLE public.test (
+    "bigint" bigint NOT NULL,
+    "bigserial" bigserial NOT NULL,
+    "box" box NOT NULL,
+    "circle" circle NOT NULL,
+    "double" double precision NOT NULL,
+    "interval" interval NOT NULL,
+    "line" line NOT NULL,
+    "lseg" lseg NOT NULL,
+    "money" money NOT NULL,
+    "path" path NOT NULL,
+    "point" point NOT NULL,
+    "polygon" polygon NOT NULL,
+    "time" time NOT NULL,
+    "timestamp" timestamp NOT NULL,
+    "timestamptz" timestamptz NOT NULL,
+    "timetz" timetz NOT NULL,
+    "uuid" uuid NOT NULL,
+    "nullable_timestamptz_with_default" timestamptz DEFAULT now(),
+    "nullable_timestamptz" timestamptz,
+    "cidr" cidr NOT NULL,
+    "date" date NOT NULL,
+    "id" int NOT NULL,
+    "inet" inet NOT NULL,
+    "integer" integer NOT NULL,
+    "real" real NOT NULL,
+    "serial" serial NOT NULL,
+    "nullable_integer" integer,
+    "smallint" smallint NOT NULL,
+    "bit" bit NOT NULL,
+    "boolean" boolean NOT NULL,
+    "nullable_boolean" boolean,
+    "bit_varying" bit varying NOT NULL,
+    "decimal" decimal NOT NULL,
+    "json" json NOT NULL,
+    "jsonb" jsonb NOT NULL,
+    "numeric" numeric NOT NULL,
+    "text" text NOT NULL,
+    "varchar" varchar(255) NOT NULL,
+    "xml" xml NOT NULL
+    );
+  
+"
+`;

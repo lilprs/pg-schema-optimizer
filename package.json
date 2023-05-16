@@ -1,0 +1,21 @@
+{
+  "name": "pg-schema-optimizer",
+  "version": "1.0.0",
+  "description": "Reorders columns in an SQL schema dump file so that they take up less space.",
+  "type": "module",
+  "exports": {
+    ".": "./lib.js"
+  },
+  "bin": {
+    "pg-schema-optimmizer": "./cli.js"
+  },
+  "scripts": {
+    "test": "bun test",
+    "format": "prettier --cache --cache-strategy metadata --write ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bun-types": "0.5.8",
+    "prettier": "2.8.8"
+  }
+}
